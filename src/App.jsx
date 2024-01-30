@@ -1,4 +1,5 @@
-import { Canvas, useThree, useFrame } from '@react-three/fiber'
+import { useEffect } from 'react'
+import { Canvas, useThree } from '@react-three/fiber'
 import { SoftShadows } from '@react-three/drei'
 import { Vector3 } from 'three'
 
@@ -14,9 +15,9 @@ function App() {
     const { camera } = useThree()
     const vec = new Vector3()
   
-    return useFrame(() => {
+    return useEffect(() => {
       camera.lookAt(0, -1, 0)
-    })
+    }), []
   }
 
   return (

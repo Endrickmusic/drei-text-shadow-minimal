@@ -56,21 +56,21 @@ export default function Model() {
      )
     }
 
-    const depthMaterial = new MeshDepthMaterial({
-      depthPacking: RGBADepthPacking
-    })
+    // const depthMaterial = new MeshDepthMaterial({
+    //   depthPacking: RGBADepthPacking
+    // })
 
-    depthMaterial.onBeforeCompile = (shader) =>
-    {
-      shader.vertexShader = shader.vertexShader.replace(
-        '#include <begin_vertex>',
-        `
-            #include <begin_vertex>
+    // depthMaterial.onBeforeCompile = (shader) =>
+    // {
+    //   shader.vertexShader = shader.vertexShader.replace(
+    //     '#include <begin_vertex>',
+    //     `
+    //         #include <begin_vertex>
 
-            transformed.x += 1.0;
-        `
-     )
-    }
+    //         transformed.x += 1.0;
+    //     `
+    //  )
+    // }
 
   return (
     <group>
@@ -93,7 +93,7 @@ export default function Model() {
         roughness = { 0.0 }
         metalness = { 0 }
         side = { DoubleSide }
-        customDepthMaterial = { depthMaterial }
+        // customDepthMaterial = { depthMaterial }
         />
         
         </Text>   
